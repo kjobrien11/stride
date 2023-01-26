@@ -33,6 +33,7 @@
     font-family: "Poppins-Bold";
     padding: 0.25rem;
     border: 1px solid transparent;
+    font-size: 1.5rem;
 }
 
 .clickable-nav-item{
@@ -52,21 +53,24 @@
     flex-direction: column;
 }
 img {
-    height: 8rem;
-    width: 24rem; 
-  }
-  .begin-btn{
+    max-width: 80%;
+    height: 10rem;
+    width: 30rem;
+}
+
+.begin-btn{
     font-family: "Poppins-Bold";
     border-radius: 5px;
     border: 0px;
     padding: 0.5rem 2rem;
     background-color: #A9CAB0;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     cursor: pointer;
     box-shadow: 0px 2px 2px 0px #00000040;
-    font-size: 1rem;
+    font-size:1.5rem;
   }
  
   .slogan{
     user-select: none;
+    font-size: 2.5rem;
   }
