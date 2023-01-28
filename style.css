@@ -160,6 +160,7 @@ a{
 .stride-corner{
     height: 5rem;
     width: 15rem;
+
 }
 .left-panel-top{
     display: flex;
@@ -193,7 +194,7 @@ a{
     cursor: pointer;
     box-shadow: 0px 2px 2px 0px #00000040;
     font-size:1.5rem;
-    margin: 1rem;
+    margin: 0.75rem;
     width: 80%;
 
     display: flex;
@@ -220,4 +221,6 @@ a{
 .panel-container{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+
 }
