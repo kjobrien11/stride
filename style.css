@@ -133,3 +133,16 @@ input{
     width: 36rem;
     margin-top: 2rem;
 }
+a{
+    color: black;
+}
+.need-help{
+    text-align: right;
+}
+.goal-section{
+    padding: 1rem 0.5rem;
+    border: solid;
+    border: 1px solid #D9D9D9;
+    border-radius: 10px;
+    height: 35vh; 
+}
