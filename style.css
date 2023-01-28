@@ -149,12 +149,13 @@ a{
 }
 .left-panel{
     padding: 1rem;
-    border-right: solid;
     background-color: white;
+
 }
 
 .right-panel{
     flex-grow: 5;
+    
 }
 .stride-corner{
     height: 5rem;
@@ -164,6 +165,18 @@ a{
     display: flex;
     align-items: center;
     flex-direction: column;
+
+    flex: 1;
+    
+}
+.left-panel-bottom{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-direction: column;
+    margin-top: auto;
+
+    flex: 1;
 }
 
 .bottom{
@@ -177,10 +190,34 @@ a{
     border-radius: 15px;
     border: 0px;
     padding: 0.25rem 1rem;
-    background-color: #A9CAB0;
     cursor: pointer;
     box-shadow: 0px 2px 2px 0px #00000040;
     font-size:1.5rem;
     margin: 1rem;
     width: 80%;
+
+    display: flex;
+    flex-direction: left;
+    justify-content: left;
+    align-items: center;
+}
+
+.active-btn{
+    background-color: #A9CAB0
+}
+.inactive-btn{
+    background-color: #f6f8fa;
+}
+.icon{
+    height: 1.5rem;
+    width: 1.5rem;
+    padding-left: 0.25rem;
+
+}
+.label-btn{
+    padding-left: 1.5rem;
+}
+.panel-container{
+    display: flex;
+    flex-direction: column;
 }
