@@ -291,6 +291,7 @@ li{
 }
 .check-box{
     accent-color: #A9CAB0;
+    
 }
 .check-box-desc{
     padding-left: 1rem;
@@ -308,4 +309,74 @@ li{
     padding: 6rem;
     border: 1px solid #D9D9D9;
     border-radius: 15px;
+}
+
+.right-panel-progress{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.right-panel-progress-top{
+    flex-grow: 1.5;
+    display: flex;
+}
+
+.right-panel-progress-bottom{
+    flex-grow: 1;
+    display: flex;
+}
+
+.right-panel-progress-top-content{
+    margin: 3rem 3rem 1.5rem 3rem;
+    border: 1px solid #D9D9D9;
+    border-radius: 15px;
+    flex-grow: 1;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    
+}
+.right-panel-progress-top-content-grid{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    flex-grow: 1;
+    gap: 2rem;
+    padding: 2rem;
+    
+
+}
+
+.progress-grid-item{
+    border: 1px solid #D9D9D9;
+    border-radius: 15px;
+}
+
+.right-panel-progress-bottom-content{
+    margin: 1.5rem 3rem 3rem 3rem;
+    border: 1px solid #D9D9D9;
+    border-radius: 15px;
+    flex-grow: 1;
+    background-color: white;
+}
+
+.right-panel-progress-top-content-header{
+    padding: 1rem 1rem 0rem 1rem;
+    display: flex;
+    flex-direction: row;
+    font-size: 1.5rem;
+    align-items: center;
+}
+.progress-label-btn{
+    padding-left: 0.5rem;
+}
+.handle-icon{
+
+    display: flex;
+    flex-direction: row;
+    font-size: 1.5rem;
+    align-items: center;
+}
+.label-font{
+    font-size: 1.5rem;
 }
