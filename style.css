@@ -143,14 +143,15 @@ a{
     height: 35vh; 
 }
 .dashboard{
-    background-color: #F3FCF5;
+    background-color: #fbfffc;
     display: flex;
     height: 100vh;
 }
 .left-panel{
     padding: 1rem;
     background-color: white;
-
+    border-right: solid;
+    border-color: #D9D9D9;
 }
 
 .stride-corner{
