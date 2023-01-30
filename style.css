@@ -241,6 +241,9 @@ a{
     box-shadow: 0px 2px 2px 0px #00000040;
     font-size:1.5rem;
 }
+.login-btn:hover{
+    background-color: #9dbaa4;
+}
 
 .right-panel{
     flex-grow: 3;
