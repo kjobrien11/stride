@@ -1,0 +1,23 @@
+{
+  "name": "stride",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kjobrien11/stride.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kjobrien11/stride/issues"
+  },
+  "homepage": "https://github.com/kjobrien11/stride#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "typescript": "^4.9.4"
+  }
+}
