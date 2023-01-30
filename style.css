@@ -305,6 +305,9 @@ li{
 .check-box{
     accent-color: #A9CAB0; 
 }
+label:hover{
+    accent-color: #A9CAB0; 
+}
 
 .check-box-desc{
     padding-left: 1rem;
