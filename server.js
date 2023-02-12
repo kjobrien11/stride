@@ -4,6 +4,8 @@ import mongodb from "mongodb";
 import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser"
+const url = "mongodb://localhost:27017";
+
 const server = express();
 
 server.use(cookieParser());
@@ -12,7 +14,11 @@ server.use(express.static("public"));
 
 
 server.get('/signup', (req, res) => {
-    res.cookie("SignUpCookie","KJ");
+    res.cookie("SignUpCookie","KJ",{
+        //secure: true, //doesn't work on local host
+        httpOnly: true,
+        sameSite: 'lax'
+    });
     res.redirect("signup.html")
 });
 server.get('/about', (req, res) => {
@@ -24,7 +30,7 @@ server.get('/dashboard', (req, res) => {
 server.get('/habits', (req, res) => {
     res.redirect("habits.html")
 });
-server.get('/index', (req, res) => {
+server.get('/', (req, res) => {
     res.redirect("index.html")
 });
 server.get('/login', (req, res) => {
@@ -43,32 +49,52 @@ server.get('/sethabits', (req, res) => {
 
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost:27017/stride");
+//mongoose.connect(url);
+
 mongoose.set('strictQuery', false);
 const userCreatationSchema = new mongoose.Schema({
     name: String,
     email: String,
     password: String
 });
-const userName = new mongoose.Schema({
-    name: String
+const userNamePassword = new mongoose.Schema({
+    username: String,
+    password: String
 })
-const UserSignUp = mongoose.model("User", userCreatationSchema); //User collection, info to add
-const User = mongoose.model("User", userCreatationSchema);
-
+const UserSignUp = mongoose.model("users", userCreatationSchema); //User collection, info to add
+const UserLogIn = mongoose.model("User", userNamePassword);
 
 
 server.post("/user-signup", (req, res) =>{
-    console.log("bye bye")
     let myData = new UserSignUp(req.body);
     myData.save();
     res.redirect("/sethabits.html");
-    /*
-    .then(item => {
-        res.send("item saved to database");
-    });
-    */
+
 });
 
+server.post("/user-login", (req, res) =>{
+    let {username, password } = req.body;
+    const expectedValue = "tj";
+    UserLogIn.find({name: username, password: password}, function(err, result) {
+    
+        if (err) throw err;
+        if(result.length == 0){
+            valid(false);
+        }else{
+            valid(true);
+        }
+      });
+    
+    function valid (flag){
+        if(flag){
+            res.redirect("/dashboard.html");
+    
+        }else{
+            res.redirect("/login.html");
+        }
+    }
+    
+});
 server.listen(3000, ()=>{
     console.log("server up");
 })
