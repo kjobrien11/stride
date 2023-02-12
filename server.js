@@ -9,17 +9,22 @@ const server = express();
 mongoose.Promise = global.Promise;
 mongoose.connect("mongodb://localhost:27017/stride");
 mongoose.set('strictQuery', false);
-const schema = new mongoose.Schema({
+const userCreatationSchema = new mongoose.Schema({
     name: String,
     email: String,
     password: String
 });
-const User = mongoose.model("User", schema);
+const userName = new mongoose.Schema({
+    name: String
+})
+const UserSignUp = mongoose.model("User", userCreatationSchema); //User collection, info to add
+const User = mongoose.model("User", userCreatationSchema);
+
 server.use(express.static("public"));
 server.use(bodyParser.urlencoded({ extended: true }));
 
 server.post("/user-signup", (req, res) =>{
-    var myData = new User(req.body);
+    let myData = new UserSignUp(req.body);
     myData.save();
     res.redirect("/sethabits.html");
     /*
