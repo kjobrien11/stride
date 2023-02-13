@@ -87,6 +87,11 @@ server.post("/user-login", (req, res) =>{
     
     function valid (flag){
         if(flag){
+            res.cookie("SignedInCookie",username,{
+                //secure: true, //doesn't work on local host
+                httpOnly: true,
+                sameSite: 'lax'
+            });
             res.redirect("/dashboard.html");
     
         }else{
